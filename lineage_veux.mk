@@ -11,8 +11,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common Matrixx stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Matrixx 
+MATRIXX_BUILD_TYPE := Official
+MATRIXX_MAINTAINER := AswinOP
+MATRIXX_CHIPSET := SM6375
+MATRIXX_BATTERY := 5000mAh
+MATRIXX_DISPLAY := 1080X2400
+
+# Gapps
+WITH_GMS := true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
