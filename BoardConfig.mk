@@ -23,6 +23,9 @@ AB_OTA_PARTITIONS := \
     vendor \
     vendor_boot
 
+# Apex
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -56,6 +59,7 @@ TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
 
 # Display
 TARGET_SCREEN_DENSITY := 440
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
@@ -182,6 +186,9 @@ include vendor/xiaomi/miuicamera-veux/SEPolicy-veux.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

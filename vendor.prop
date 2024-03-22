@@ -117,6 +117,7 @@ vendor.qcom.bluetooth.soc=hastings
 # Camera
 camera.disable_zsl_mode=true
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
+persist.vendor.camera.perflock.enable=0
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
@@ -132,6 +133,7 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.vendor.display.sensortype=2
 ro.vendor.display.svi=1
+vendor.display.perf_hint_window=50
 vendor.display.comp_mask=0
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
@@ -139,6 +141,7 @@ vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=0
 vendor.display.disable_rotator_ubwc=1
 vendor.display.disable_rounded_corner_thread=0
+vendor.display.disable_partial_split=1
 vendor.display.disable_scaler=0
 vendor.display.enable_allow_idle_fallback=1
 vendor.display.enable_async_powermode=1
@@ -169,6 +172,8 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
+debug.sf.auto_latch_unsignaled=true
+debug.hwui.skia_atrace_enabled=false
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
@@ -178,6 +183,7 @@ debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.color_mode=7
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=258
+ro.config.avoid_gfx_accel=true
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
@@ -207,6 +213,7 @@ persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 ro.telephony.default_network=33,33
+ro.telephony.block_binder_thread_on_incoming_calls=false
 
 # Sensors
 persist.vendor.sensors.enable.bypass_worker=true
@@ -220,6 +227,15 @@ persist.vendor.sensors.sync_request=true
 ro.boot.product.vendor.sku=holi
 ro.soc.manufacturer=QTI
 ro.soc.model=SM6375
+
+# Surfaceflinger
+debug.sf.late.sf.duration=20000000
+debug.sf.late.app.duration=15000000
+debug.sf.early.sf.duration=20000000
+debug.sf.early.app.duration=15000000
+debug.sf.earlyGl.sf.duration=20000000
+debug.sf.earlyGl.app.duration=15000000
+debug.sf.hwc.min.duration=10000000
 
 # USB
 sys.usb.mtp.batchcancel=1
